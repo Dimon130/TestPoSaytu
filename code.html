@@ -1,0 +1,390 @@
+<!DOCTYPE html><html><head><base href="https://elegant-wedding-decor.com/" target="_blank">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Элегантный Свадебный Декор</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Montserrat:wght@300;400;500&amp;display=swap" rel="stylesheet">
+<style>
+:root {
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-gray: #808080;
+    --color-light-gray: #f5f5f5;
+    --font-decorative: 'Playfair Display', serif;
+    --font-main: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--color-black);
+    background: var(--color-white);
+    line-height: 1.6;
+}
+
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+
+.nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.fancy-button {
+    text-decoration: none;
+    color: var(--color-black);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    padding: 0.8rem 1.5rem;
+    overflow: hidden;
+    transition: color 0.3s;
+    border: 1px solid transparent;
+}
+
+.fancy-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--color-black);
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    z-index: -1;
+}
+
+.fancy-button:hover {
+    color: var(--color-white);
+    border-color: var(--color-black);
+}
+
+.fancy-button:hover::before {
+    transform: translateX(100%);
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('elegant-wedding.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+}
+
+.section {
+    padding: 8rem 2rem;
+    position: relative;
+}
+
+.section:nth-child(even) {
+    background: var(--color-light-gray);
+}
+
+.section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: var(--font-decorative);
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 2px;
+    background: var(--color-black);
+    margin: 1rem auto;
+}
+
+.elegant-card {
+    background: var(--color-white);
+    padding: 3rem;
+    margin-bottom: 2rem;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.elegant-card:hover {
+    transform: translateY(-5px);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-white);
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.date {
+    font-family: var(--font-decorative);
+    font-size: 1.2rem;
+    color: var(--color-gray);
+    margin-bottom: 1rem;
+}
+
+.couple {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.decoration {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--color-black);
+    transform: rotate(45deg);
+}
+
+.decoration-tl {
+    top: -15px;
+    left: -15px;
+}
+
+.decoration-br {
+    bottom: -15px;
+    right: -15px;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.animated-element {
+    animation: pulse 2s infinite;
+}
+
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+    <nav class="nav">
+        <a href="#about" class="fancy-button">Обо мне</a>
+        <a href="#work" class="fancy-button">Работа с парой</a>
+        <a href="#conditions" class="fancy-button">Условия работы</a>
+        <a href="#sketch" class="fancy-button">Эскиз и реализация</a>
+        <a href="#portfolio" class="fancy-button">Примеры работы</a>
+    </nav>
+</header>
+
+<section class="hero" style="background: none;">
+    <img src="https://files.cdn-files-a.com/uploads/9875953/2000_gi-671bffe36b6bb.jpg" alt="элегантное свадебное оформление с цветочной аркой и драпировкой на фоне заката" width="100%" height="100%" style="position: absolute; top: 0; left: 0; object-fit: cover; z-index: -1; filter: brightness(0.5);">
+    <div class="hero-content animated-element">
+        <h1 class="section-title" style="color: var(--color-white);">Свадебный декор вашей мечты</h1>
+    </div>
+</section>
+
+<section id="about" class="section">
+    <div class="section-inner">
+        <h2 class="section-title">Обо мне</h2>
+        <div class="elegant-card">
+            <div class="decoration decoration-tl"></div>
+            <p>Создаю уникальные свадебные пространства, где каждая деталь имеет значение. Мой подход основан на индивидуальности каждой пары и внимании к деталям.</p>
+            <div class="decoration decoration-br"></div>
+        </div>
+    </div>
+</section>
+
+<section id="work" class="section">
+    <div class="section-inner">
+        <h2 class="section-title">Работа с парой</h2>
+        <div class="elegant-card">
+            <div class="decoration decoration-tl"></div>
+            <p>От первой встречи до воплощения вашей мечты, мы работаем вместе, чтобы создать идеальное оформление вашего особенного дня.</p>
+            <div class="decoration decoration-br"></div>
+        </div>
+    </div>
+</section>
+
+<section id="conditions" class="section">
+    <div class="section-inner">
+        <h2 class="section-title">Условия работы</h2>
+        <div class="elegant-card">
+            <div class="decoration decoration-tl"></div>
+            <ul style="list-style: none; text-align: center;">
+                <li>• Индивидуальный подход</li>
+                <li>• Предварительная консультация</li>
+                <li>• Составление детального плана</li>
+                <li>• Гарантия качества</li>
+            </ul>
+            <div class="decoration decoration-br"></div>
+        </div>
+    </div>
+</section>
+
+<section id="sketch" class="section">
+    <div class="section-inner">
+        <h2 class="section-title">Эскиз и реализация</h2>
+        <div class="elegant-card">
+            <div class="decoration decoration-tl"></div>
+            <p>Каждый проект начинается с детального эскиза и заканчивается безупречной реализацией. Вы увидите свою свадьбу еще до её начала.</p>
+            <div class="portfolio-grid" style="margin-top: 3rem;">
+                <div class="portfolio-item">
+                    <img src="https://i.postimg.cc/nrmLCW5h/photo-2024-10-16-10-48-50.jpg" width="100%" height="800" style="object-fit: cover; border-radius: 4px;">
+                    <p style="margin-top: 1rem; font-style: italic; color: var(--color-gray);">Эскиз оформления</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://i.postimg.cc/9QdW3Z3s/photo-2024-10-16-10-48-55.jpg" alt="реализованное свадебное оформление с белой аркой, украшенной живыми цветами и легкой драпировкой" width="100%" height="800" style="object-fit: cover; border-radius: 4px;">
+                    <p style="margin-top: 1rem; font-style: italic; color: var(--color-gray);">Готовое оформление</p>
+                </div>
+            </div>
+            <div class="decoration decoration-br"></div>
+        </div>
+    </div>
+</section>
+
+<section id="portfolio" class="section">
+    <div class="section-inner">
+        <h2 class="section-title">Примеры работы</h2>
+        <div class="portfolio-grid">
+    <div class="portfolio-item">
+        <div class="date">1 октября 2023</div>
+        <div class="couple">Павел и Вера</div>
+        <div class="photo-album">
+            <img src="https://i.postimg.cc/CLBMQzWP/20231001-1.jpg" alt="свадебная арка с белыми розами и пионами" width="100%" height="200" style="object-fit: cover; margin-bottom: 10px; border-radius: 4px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <img src="https://i.postimg.cc/d1Q2JyQx/20231001-2.jpg" alt="оформление свадебного стола" width="100%" height="100" style="object-fit: cover; border-radius: 4px;">
+                <img src="https://i.postimg.cc/8zXJ6Lvy/20231001-3.jpg" alt="цветочные композиции на столах гостей" width="100%" height="100" style="object-fit: cover; border-radius: 4px;">
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-item">
+        <div class="date">3 сентября 2024</div>
+        <div class="couple">Сергей и Анастасия</div>
+        <div class="photo-album">
+            <img src="https://i.postimg.cc/RZ8nGzLY/20240903-1.jpg" alt="выездная церемония в саду с персиковыми драпировками" width="100%" height="200" style="object-fit: cover; margin-bottom: 10px; border-radius: 4px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <img src="https://i.postimg.cc/qRY1H8VQ/20240903-2.jpg" alt="декор президиума молодоженов" width="100%" height="100" style="object-fit: cover; border-radius: 4px;">
+                <img src="https://i.postimg.cc/CKj8TLPJ/20240903-3.jpg" alt="оформление фотозоны с живыми цветами" width="100%" height="100" style="object-fit: cover; border-radius: 4px;">
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-item">
+        <div class="date">6 октября 2021</div>
+        <div class="couple">Александр и Юлия</div>
+        <div class="photo-album">
+            <img src="https://i.postimg.cc/vZ8GYLGQ/20211006-1.jpg" alt="классическое оформление зала в белых и золотых тонах" width="100%" height="200" style="object-fit: cover; margin-bottom: 10px; border-radius: 4px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <img src="https://i.postimg.cc/7ZQ8nB5y/20211006-2.jpg" alt="композиции из белых роз и орхидей" width="100%" height="100" style="object-fit: cover; border-radius: 4px;">
+                <img src="https://i.postimg.cc/pXczBSVK/20211006-3.jpg" alt="свечи и цветочные композиции на гостевых столах" width="100%" height="100" style="object-fit: cover; border-radius: 4px;">
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-item">
+        <div class="date">12 октября 2024</div>
+        <div class="couple">Александр и Дарья</div>
+        <div class="photo-album">
+            <img src="https://i.postimg.cc/RhYnBt6M/20241012-1.jpg" alt="современное минималистичное оформление в стиле бохо" width="100%" height="200" style="object-fit: cover; margin-bottom: 10px; border-radius: 4px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <img src="https://i.postimg.cc/Qt4k3DSF/20241012-2.jpg" alt="подвесные флористические инсталляции" width="100%" height="100" style="object-fit: cover; border-radius: 4px;">
+                <img src="https://i.postimg.cc/J7XyZ1Wn/20241012-3.jpg" alt="столы с геометрическим декором и сухоцветами" width="100%" height="100" style="object-fit: cover; border-radius: 4px;">
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Плавная прокрутка
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const section = document.querySelector(this.getAttribute('href'));
+            const headerOffset = 80;
+            const elementPosition = section.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
+        });
+    });
+
+    // Анимация при скролле
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.elegant-card, .portfolio-item').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'all 0.6s ease-out';
+        observer.observe(el);
+    });
+});
+</script>
+
+</body></html>
